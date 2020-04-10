@@ -1,5 +1,6 @@
 import cv2
 import os
+from pathlib import Path
 
 bird_class = cv2.CascadeClassifier('cascade.xml')
 
@@ -47,5 +48,6 @@ for im in os.listdir('bird_images'):
         #plt.show()
         #with open(, 'wb') as f:
             #plt.savefig(f)
-        cv2.imwrite(f'out/{amount_found}_{im}', img)
+        path = Path(im)
+        cv2.imwrite(f'out/{path.stem}_{amount_found}{path.suffix}', img)
         
