@@ -6,6 +6,6 @@ Sample gen:
     opencv_createsamples.exe -vec birds3.vec -info .\transformed_labels_3.txt -num 253
 
 HAAR:
-    opencv_traincascade.exe -data trained3 -vec .\birds3.vec -bg .\neg.txt -precalcValBufSize 8192 -precalcIdxBufSize 8192 -acceptanceRatioBreakValue 10e-5 -w 24 -h 24 -featureType HAAR -numPos 200 -numNeg 300 -numStages 100
+    opencv_traincascade.exe -data trained3_2 -vec .\birds3.vec -bg .\neg.txt -precalcValBufSize 8192 -precalcIdxBufSize 8192 -acceptanceRatioBreakValue 10e-5 -w 24 -h 24 -featureType HAAR -numPos 200 -numNeg 300 -numStages 100 -weightTrimRate 0.95 -maxDepth 1 -maxFalseAlarmRate 0.1
 LBP: 
     opencv_traincascade.exe -data trained3_LBP -vec .\birds3.vec -bg .\neg.txt -precalcValBufSize 8192 -precalcIdxBufSize 8192 -acceptanceRatioBreakValue 10e-5 -w 24 -h 24 -featureType LBP -numPos 200 -numNeg 300 -numStages 100

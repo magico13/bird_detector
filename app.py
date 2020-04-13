@@ -12,14 +12,16 @@ for im in os.listdir('bird_images'):
     x2 = img.shape[1]
     y1 = 100
     y2 = 350
+    #y1 = 0
+    #y2 = img.shape[0]
     img_gray = cv2.cvtColor(img[y1:y2, x1:x2], cv2.COLOR_BGR2GRAY) 
     #img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) 
 
     # Use minSize because for not 
     # bothering with extra-small 
     # dots that would look like birds
-    found = bird_class.detectMultiScale(img_gray, 
-                                    minSize =(100, 100)) 
+    minsize = 75
+    found = bird_class.detectMultiScale(img_gray, minSize=(minsize, minsize)) 
 
     # Don't do anything if there's 
     # no bird
