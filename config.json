@@ -1,0 +1,19 @@
+{
+    "webcam_id": 0,
+    "detect_motion": true,
+    "detect_birds": true,
+    "framerate": 2,
+    "motion_min_area": 1000,
+    "bird_min_size": 25,
+    "bird_max_size": 250,
+    "process_width": 640,
+    "process_height": 480,
+    "show_video": false,
+    "show_mask": false,
+    "output_folder": "./out",
+    "output_debug": true,
+    "roi_X": 0,
+    "roi_Y": 0,
+    "roi_X2": 640,
+    "roi_Y2": 480
+}
