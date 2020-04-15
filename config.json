@@ -11,7 +11,7 @@
     "show_video": false,
     "show_mask": false,
     "output_folder": "./out",
-    "output_debug": true,
+    "output_debug": false,
     "roi_X": 0,
     "roi_Y": 0,
     "roi_X2": 640,

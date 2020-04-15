@@ -1,7 +1,9 @@
-import cv2
+import os
 import json
 import datetime
 import time
+
+import cv2
 import imutils
 
 with open('config.json') as f:
@@ -64,6 +66,9 @@ while True:
             if config['show_video'] or config['output_debug']:
                 # compute the bounding box for the contour, draw it on the frame
                 (x, y, w, h) = cv2.boundingRect(c)
+                #adjust for roi
+                x += x1
+                y += y1
                 cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
             else:
                 # Can stop processing as soon as motion is detected if we aren't debugging
@@ -108,6 +113,7 @@ while True:
     if should_save:
         folder = config['output_folder']
         if folder:
+            if not os.path.exists(folder): os.mkdir(folder)
             curTime = datetime.datetime.now().replace(microsecond=0).isoformat()
             filename = curTime.replace(':', '.')
             extension = '.jpg'
