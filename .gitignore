@@ -143,3 +143,4 @@ cython_debug/
 # Don't include images
 *.jpg
 *.zip
+mov/*.mp4
